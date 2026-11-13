@@ -1,0 +1,20 @@
+{% extends 'pins/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<main class="feed">
+    {% for pin in pins %}
+    <div class="pin">
+        <img src="{{ pin.image_url }}" alt="{{ pin.title }}">
+        <div class="pin-info">
+            <h3>{{ pin.title }}</h3>
+            <p>{{ pin.description }}</p>
+            <small>By {{ pin.user.username }}</small>
+        </div>
+        <br><br>
+    </div>
+    {% empty %}
+        <p>No Pins Available</p>
+        <a href="{% url 'add' %}">Create Your First Pin</a>
+    {% endfor %}
+</main>
+{% endblock %}

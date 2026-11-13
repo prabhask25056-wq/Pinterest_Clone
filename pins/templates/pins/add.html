@@ -1,0 +1,37 @@
+{% extends 'pins/base.html' %}
+{% block title %}Create{% endblock %}
+{% block content %}
+<div class="auth-card wide">
+    <h1>Create</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>Title:</p>
+        {{ form.title }}
+        <br><br>
+        <p>Description:</p>
+        {{ form.description }}
+        <br><br>
+        <p>Upload Image:</p>
+        {{ form.image }}
+        <br><br>
+        {{ form.errors }}
+        <button type="submit">Publish</button>
+    </form>
+</div>
+
+<img id="preview" hidden alt="Preview">
+<script>
+    const input = document.querySelector('input[type=file]');
+    const preview = document.getElementById('preview');
+
+    if (input && preview) {
+        input.onchange = function() {
+            let file = input.files[0];
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.hidden = false;
+            }
+        };
+    }
+</script>
+{% endblock %}
