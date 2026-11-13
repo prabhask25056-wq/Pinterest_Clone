@@ -1,4 +1,5 @@
 Pinterest Clone Designed Using Django Framework , HTML ,CSS ,DataBase- Supabase, JavaScript
+<br>
 First Register by filling user name, email,password . 
 <img width="1765" height="914" alt="Register Page" src="https://github.com/user-attachments/assets/07a9d9b8-b9c2-4bb4-bcb1-b1420ab91ea3" />
 after registering , here comes the home page which contains home button, search bar, create and logout button.
